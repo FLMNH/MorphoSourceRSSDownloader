@@ -45,7 +45,7 @@ def check_if_new(collection_guid,pub_date):
 
 def get_new_file(link, collection_guid, file_path):
     """Downloads the new file."""
-    return urllib.request.urlretrieve(link, "{}/{}.csv".format(file_path,collection_guid))
+    return urllib.request.urlretrieve(link, "{}/{}.txt".format(file_path,collection_guid))
     
 def main(argv):
     if len(argv) == 4:
