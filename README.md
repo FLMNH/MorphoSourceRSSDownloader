@@ -8,7 +8,7 @@ https://floridamuseum.ufl.edu/omt
 # About
 This application is intended to run as a scheduled task, such as a cron job, and downloads Audubon Core data files for a given collection. The application is a tool to automate the the flow of information as Morphosources releases new data.
 
-The date of publication from the most recent download is recored in a log file and the application only downloads a new file if the date of publication on the RSS feed is more recent than the recorded date. The intent is to schedule the application's execution to compliment the current Morphosource publication schedule.
+The date of publication from the most recent download is recorded in a log file and the application only downloads a new file if the date of publication on the RSS feed is more recent than the recorded date. The intent is to schedule the application's execution to compliment the current Morphosource publication schedule.
 
 # Python Best Practice - Virtual Environments
 Use of Python Virtual Environments is strongly encouraged and is regarded as a best practice. To quote the Python Documentation:
@@ -37,11 +37,11 @@ source bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-Refer to Usage section for instructions to test the application.
+Refer to the Usage section for instructions to test the application.
 
 # Usage
 
 
-
+# License
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 https://creativecommons.org/licenses/by-nc-sa/4.0/
