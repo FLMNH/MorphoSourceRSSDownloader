@@ -1,9 +1,14 @@
-import feedparser, os, sys, urllib, datetime
+# Florida Museum of Natural History
+# Office of Museum Technology, 2018
+# Author: Warren Brown
+# Morphopsource RSS Feed Downloader
+# https://github.com/FLMNH/MorphoSourceRSSDownloader
+# https://floridamuseum.ufl.edu/omt
+# This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-#Config Variables
-# Morphosource used the iDigBio GUID
-#collection_guid = "bd7cfd55-bf55-46fc-878d-e6e11f574ccd"
-#feed_address = "https://www.morphosource.org/rss/ms.rss"
+
+import feedparser, os, sys, urllib, datetime
 
 def check_log_file(collection_guid):
     """Checks for log file. If not found, creates one with backdated timestamp."""
