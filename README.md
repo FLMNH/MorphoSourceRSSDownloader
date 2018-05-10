@@ -6,7 +6,7 @@ Author: Warren Brown
 https://floridamuseum.ufl.edu/omt  
 
 # About
-This application is intended to run as a scheduled task, such as a cron job, and downloads Audubon Core data files for a given collection. The application is a tool to automate the the flow of information as Morphosources releases new data.
+This application is intended to run as a scheduled task on an IPT server and downloads Audubon Core data files for a given collection. The application is a tool to automate the the flow of information as Morphosources releases new data.
 
 The date of publication from the most recent download is recorded in a log file and the application only downloads a new file if the date of publication on the RSS feed is more recent than the recorded date. The intent is to schedule the application's execution to compliment the current Morphosource publication schedule.
 
@@ -40,7 +40,36 @@ pip install -r requirements.txt
 Refer to the Usage section for instructions to test the application.
 
 # Usage
+The application is a command line tool that accepts arguments of the a collection GUID, RSS feed address, and the path to which the downloaded file should be saved.
 
+Information on the MorphoSource RSS feed is avaialable at https://www.morphosource.org/About/report and may be used to obtain your collection's GUID.
+
+Abstractly, usage is 
+```bash
+python morphosourcefeed.py COLLECTIONGUID FEEDADDRESS /PATH/TO/SAVE/FILE
+```
+PATH/TO/SAVE/FILE will be determined by your specific IPT server configuration and should be the "Source Data" path for your resource.
+
+## Run Manually
+Presuming installation as described in this document:
+```bash
+cd /usr/local/sbin/MorphoSourceRSSDownload
+source bin/activate
+python morphosourcefeed.py COLLECTIONGUID FEEDADDRESS /PATH/TO/SAVE/FILE
+deactivate
+```
+### Concrete Example
+For a concrete example, this translates to the following for our IPT server:
+```bash 
+cd /usr/local/sbin/MorphoSourceRSSDownload
+source bin/activate
+python morphosourcefeed.py "bd7cfd55-bf55-46fc-878d-e6e11f574ccd" "https://www.morphosource.org/rss/ms.rss" "/srv/iptdata/resources/herpetology/sources"
+deactivate
+```
+YOUR PATH AND GUID WILL BE DIFFERENT.
+
+## Run As Scheduled Task with CRON
+The Virtual Environment introduces little change from normal cron scheduling. Simply include activating the VENV.
 
 # License
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.

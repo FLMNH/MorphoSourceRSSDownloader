@@ -79,7 +79,8 @@ def main(argv):
 
             # pub_datetime_object = datetime.strptime(feed.entries[0]["published"], '%a, %d %b %Y %H:%M:%S %z')
     else:
-        print("\n\tUsage: python3 morphosourcefeed.py COLLECTIONGUID FEEDADDRESS /PATH/TO/SAVE/FILE")
+        print("\n\tUsage: python morphosourcefeed.py COLLECTIONGUID FEEDADDRESS /PATH/TO/SAVE/FILE")
+        print("\n\tRequires Python 3.6.")
     return
 
 if __name__ == "__main__":
