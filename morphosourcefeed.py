@@ -52,7 +52,7 @@ def main(argv):
         collection_guid = argv[1]
         if check_log_file(collection_guid):
             file_path = argv[3]
-            article_title = "MorphoSource media, Audubon Core format for recordset {}".format(collection_guid)
+            #article_title = "MorphoSource media, Audubon Core format for recordset {}".format(collection_guid)
             feed_address = argv[2]
             article_exists = False
             link = None
@@ -62,7 +62,8 @@ def main(argv):
             feed_entries = feed.entries
 
             for i,entry in enumerate(feed.entries):
-                if article_title == entry.title:
+                #if article_title == entry.title:
+                if "Audubon Core format" in entry.title and collection_guid in entry.title:
                     link = entry.link
                     published_at = datetime.datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z').replace(tzinfo=None)
                     article_exists = True
