@@ -44,7 +44,7 @@ The application is a command line tool that accepts arguments of the a collectio
 
 Information on the MorphoSource RSS feed is avaialable at https://www.morphosource.org/About/report and may be used to obtain your collection's GUID.
 
-Abstractly, usage is 
+The syntax is 
 ```bash
 python morphosourcefeed.py COLLECTIONGUID FEEDADDRESS /PATH/TO/SAVE/FILE
 ```
