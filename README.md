@@ -79,7 +79,7 @@ administrative access.
 1. Use morphosourcefeed.py to download the data file from the RSS feed to a temporary directory, like your user home directory.
 2. Login to manage your resource in IPT and add the file you just downloaded as a data source. You will need to upload the file 
 via the IPT management interface in your browser, so if you downloaded the file on the server, you will need to copy it to your
-local machine first.
+local machine first. DO NOT CHANGE THE NAME OF THE FILE. The file must be named after the GUID.
 3. Record the server file path of the data source. You will need this path when scheduling morphosourcefeed.py to update the file.
 4. Add an Audubon Media Description in your resource Darwin Core Mappings. Select the data source created in step 2.
 5. Complete the mapping. Build and check for errors and correctness.

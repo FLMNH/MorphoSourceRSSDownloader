@@ -72,7 +72,7 @@ def main(argv):
                 if check_if_new(collection_guid, published_at):
                     get_new_file(link, collection_guid, file_path)
                     write_pub_date(collection_guid, published_at)
-                    print("Update downloaded to {}/{}.csv".format(file_path,collection_guid))
+                    print("Update downloaded to {}/{}.txt".format(file_path,collection_guid))
                 else:
                     print("No update.")
             else:
