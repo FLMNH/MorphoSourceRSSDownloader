@@ -52,7 +52,6 @@ def main(argv):
         collection_guid = argv[1]
         if check_log_file(collection_guid):
             file_path = argv[3]
-            #article_title = "MorphoSource media, Audubon Core format for recordset {}".format(collection_guid)
             feed_address = argv[2]
             article_exists = False
             link = None
@@ -77,8 +76,6 @@ def main(argv):
                     print("No update.")
             else:
                 print("{} does not exist in {}.".format(article_title, feed_address))
-
-            # pub_datetime_object = datetime.strptime(feed.entries[0]["published"], '%a, %d %b %Y %H:%M:%S %z')
     else:
         print("\n\tUsage: python morphosourcefeed.py COLLECTIONGUID FEEDADDRESS /PATH/TO/SAVE/FILE")
         print("\n\tRequires Python 3.6.")
