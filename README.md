@@ -73,7 +73,7 @@ The Virtual Environment introduces little change from normal cron scheduling. Si
 
 # Pulling it all together with IPT
 To make all this magic work with IPT, do the following. Please note, order of operations here is important.
-For best results, do these steps in order. Also, these instructions presume familiarity with IPT configuration and
+For best results, do these steps in order. These instructions presume familiarity with IPT configuration and
 administrative access.
 
 1. Use morphosourcefeed.py to download the data file from the RSS feed to a temporary directory, like your user home directory.
