@@ -69,7 +69,7 @@ deactivate
 YOUR PATH AND GUID WILL BE DIFFERENT.
 
 ## Run As Scheduled Task with CRON
-The Virtual Environment introduces little change from normal cron scheduling. Simply include activating the VENV.
+The Virtual Environment introduces little change from normal cron scheduling. Simply include activating and deactivating the VENV.
 
 # Pulling it all together with IPT
 To make all this magic work with IPT, do the following. Please note, order of operations here is important.
