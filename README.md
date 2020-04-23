@@ -44,7 +44,7 @@ The application is a command line tool that accepts arguments of the a collectio
 
 Information on the MorphoSource RSS feed is avaialable at https://www.morphosource.org/About/report and may be used to obtain your collection's GUID.
 
-Abstractly, usage is 
+The syntax is 
 ```bash
 python morphosourcefeed.py COLLECTIONGUID FEEDADDRESS /PATH/TO/SAVE/FILE
 ```
@@ -63,16 +63,27 @@ For a concrete example, this translates to the following for our IPT server:
 ```bash 
 cd /usr/local/sbin/MorphoSourceRSSDownload
 source bin/activate
-python morphosourcefeed.py "bd7cfd55-bf55-46fc-878d-e6e11f574ccd" "https://www.morphosource.org/rss/ms.rss" "/srv/iptdata/resources/herpetology/sources"
+python morphosourcefeed.py "bd7cfd55-bf55-46fc-878d-e6e11f574ccd" "https://www.morphosource.org/rss/ms_rss" "/srv/iptdata/resources/herpetology/sources"
 deactivate
 ```
 YOUR PATH AND GUID WILL BE DIFFERENT.
 
 ## Run As Scheduled Task with CRON
-The Virtual Environment introduces little change from normal cron scheduling. Simply include activating the VENV.
+The Virtual Environment introduces little change from normal cron scheduling. Simply include activating and deactivating the VENV.
 
-# IPT
+# Pulling it all together with IPT
+To make all this magic work with IPT, do the following. Please note, order of operations here is important.
+For best results, do these steps in order. These instructions presume familiarity with IPT configuration and
+administrative access.
 
+1. Use morphosourcefeed.py to download the data file from the RSS feed to a temporary directory, like your user home directory.
+2. Login to manage your resource in IPT and add the file you just downloaded as a data source. You will need to upload the file 
+via the IPT management interface in your browser, so if you downloaded the file on the server, you will need to copy it to your
+local machine first. DO NOT CHANGE THE NAME OF THE FILE. The file must be named after the GUID.
+3. Record the server file path of the data source. You will need this path when scheduling morphosourcefeed.py to update the file.
+4. Add an Audubon Media Description in your resource Darwin Core Mappings. Select the data source created in step 2.
+5. Complete the mapping. Build and check for errors and correctness.
+6. Schedule a task (probably cron) to invoke morphosourcefeed.py and update your data source using the file path from step 3.
 
 # License
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
