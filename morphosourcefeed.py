@@ -56,7 +56,7 @@ def get_new_specify_file(link, collection_guid, file_path):
         with archive_zip.open('multimedia.txt') as audubon_file:
             with open('{}/{}.txt'.format(file_path, collection_guid), 'w') as outfile:
                 for line in audubon_file:
-                    outfile.write(str(line))
+                    outfile.write(line.decode())
     shutil.rmtree(temp_dir)
 
 
