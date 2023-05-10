@@ -77,7 +77,7 @@ def main(argv):
             for i,entry in enumerate(feed.entries):
                 # Morphosource feed or Specify7 feed
                 morphosource_feed = "Audubon Core format" in entry.title and collection_guid in entry.title
-                specify_feed = 'specify.floridamuseum.ufl.edu' in feed_address and collection_guid in entry.id
+                specify_feed = ('specify.floridamuseum.ufl.edu' in feed_address or 'specify7.floridamuseum.ufl.edu' in feed_address) and collection_guid in entry.id
                 if morphosource_feed or specify_feed:
                     link = entry.link
                     published_at = datetime.datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z').replace(tzinfo=None)
